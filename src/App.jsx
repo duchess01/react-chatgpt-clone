@@ -158,7 +158,7 @@ function App() {
         <section className={`sidebar ${isShowSidebar ? 'open' : ''}`}>
           <div className='sidebar-header' onClick={createNewChat} role='button'>
             <BiPlus size={20} />
-            <button>New Chat</button>
+            <button>New Question</button>
           </div>
           <div className='sidebar-history'>
             {uniqueTitles.length > 0 && previousChats.length !== 0 && (
@@ -215,7 +215,7 @@ function App() {
           <div className='sidebar-info'>
             <div className='sidebar-info-upgrade'>
               <BiUser size={20} />
-              <p>Upgrade plan</p>
+              <p>FAQs</p>
             </div>
             <div className='sidebar-info-user'>
               <BiSolidUserCircle size={20} />
@@ -228,12 +228,12 @@ function App() {
           {!currentTitle && (
             <div className='empty-chat-container'>
               <img
-                src='images/chatgpt-logo.svg'
+                src='images/tsh-logo.PNG'
                 width={45}
                 height={45}
                 alt='ChatGPT'
               />
-              <h1>Chat GPT Clone</h1>
+              <h1>TSH intelligent Chatbot</h1>
               <h3>How can I help you today?</h3>
             </div>
           )}
@@ -263,7 +263,7 @@ function App() {
                         <BiSolidUserCircle size={28.8} />
                       </div>
                     ) : (
-                      <img src='images/chatgpt-logo.svg' alt='ChatGPT' />
+                      <img src='images/tsh-logo.PNG' alt='ChatGPT' />
                     )}
                     {isUser ? (
                       <div>
@@ -285,14 +285,13 @@ function App() {
             {errorText && <p className='errorText'>{errorText}</p>}
             {errorText && (
               <p id='errorTextHint'>
-                *You can clone the repository and use your paid OpenAI API key
-                to make this work.
+                
               </p>
             )}
             <form className='form-container' onSubmit={submitHandler}>
               <input
                 type='text'
-                placeholder='Send a message.'
+                placeholder='Ask a question.'
                 spellCheck='false'
                 value={isResponseLoading ? 'Processing...' : text}
                 onChange={(e) => setText(e.target.value)}
@@ -305,7 +304,7 @@ function App() {
               )}
             </form>
             <p>
-              ChatGPT can make mistakes. Consider checking important
+              TSH intelligent chatbot can make mistakes. Consider checking important
               information.
             </p>
           </div>
